@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Basic Slider</title>
+	<style type="text/css">
+
+		body {
+			margin: 20px;
+		}
+		
+		#container {
+			position	: relative;
+			width		: 200px;
+			height		: 20px;
+			border		: 1px solid black;
+			background	: seashell;
+			cursor		: pointer;
+		
+		}
+		
+		.slider-track {
+			position	: absolute;
+			width		: 0%;
+			height		: 100%;
+			top			: 0px;
+			left		: 0px;
+			background	: aliceblue;
+		}
+		
+		.slider-handle {
+			position		: absolute;
+			width			: 8px;
+			height			: 140%;
+			top				: -25%;
+			right			: -4px;
+			border			: 1px solid black;
+			background		: pink;
+			border-radius	: 10px;
+		}
+	
+	</style>
+	<script src="basic_slider.js"></script>
+
+</head>
+<body>
+
+<div id="container"></div>
+<div id="value"></div>
+
+<script>
+
+	new Slider({
+		container: document.getElementById('container'),
+		initPerct: 0.7,
+		onChange: function(value) {
+			document.getElementById('value').textContent = value;
+		}
+	});	
+
+</script>
+
+</body>
+</html>
